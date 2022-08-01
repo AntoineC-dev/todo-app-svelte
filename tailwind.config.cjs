@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
+  darkMode: "class",
   content: ["./src/app.html", "./src/**/*.{html,js,svelte,ts}"],
   theme: {
+    screens: {
+      xs: "480px",
+      ...defaultTheme.screens,
+    },
     colors: {
       blue: "hsl(220, 98%, 61%)",
       cyan: "hsl(192, 100%, 67%)",
@@ -26,7 +31,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['"Josefin Sans"', ...defaultTheme.fontFamily.sans],
+        sans: ["Open\\ Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },
