@@ -5,3 +5,5 @@ export interface Todo {
   content: string;
   completed: boolean;
 }
+
+export type LocalStorageKeys = "theme" | "todos";
