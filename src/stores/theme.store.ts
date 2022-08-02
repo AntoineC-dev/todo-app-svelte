@@ -1,18 +1,13 @@
 import { writable } from "svelte/store";
-import { browser } from "$app/env";
 import type { Theme } from "../types";
+import { getInitialData, persistData } from "../helpers/persistStore.helpers";
 
-const defaultTheme: Theme = "light";
-const initialValue = browser ? (window.localStorage.getItem("theme") as Theme) ?? defaultTheme : defaultTheme;
+const defaultValue: Theme = "light";
 
-export const theme = writable<Theme>(initialValue);
+export const theme = writable<Theme>(getInitialData({ defaultValue, key: "theme" }));
 
 // Sync store & localStorage
-theme.subscribe((current) => {
-  if (browser) {
-    window.localStorage.setItem("theme", current);
-  }
-});
+theme.subscribe((data) => persistData({ data, key: "theme" }));
 
 // Toggle theme
 export const toggleTheme = () => theme.update((curr) => (curr === "light" ? "dark" : "light"));
