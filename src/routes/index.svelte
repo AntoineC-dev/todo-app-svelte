@@ -18,7 +18,9 @@
     <TodoList />
     <TodoListFooter />
   </div>
-  <p out:slide={{ duration: 300 }} class="text-xs text-light-400 dark:text-dark-400 text-center">
-    Drag and drop to reorder list
-  </p>
+  {#if $todos.length !== 0}
+    <p out:slide={{ duration: 300 }} class="text-xs text-light-400 dark:text-dark-400 text-center">
+      Drag and drop to reorder list
+    </p>
+  {/if}
 </div>
