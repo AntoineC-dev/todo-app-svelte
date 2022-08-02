@@ -73,3 +73,14 @@ export const deleteTodo = (id: Todo["id"]) => todos.update((current) => current.
 
 // Delete completed
 export const deleteCompletedTodos = () => todos.update((current) => current.filter((todo) => !todo.completed));
+
+// Sort todos after drag event
+export const updateTodosOrder = (previous: number, next: number) =>
+  todos.update((todos) => {
+    console.log("update todos");
+    const todo = todos[previous];
+    const newArr = [...todos];
+    newArr.splice(previous, 1);
+    newArr.splice(next, 0, todo);
+    return newArr;
+  });

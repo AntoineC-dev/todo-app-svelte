@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 module.exports = {
   darkMode: "class",
   content: ["./src/app.html", "./src/**/*.{html,js,svelte,ts}"],
@@ -59,5 +60,28 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities, theme }) => {
+      addUtilities({
+        ".completed-gradient": {
+          background: `
+          linear-gradient(to top left,${theme("colors.purple")},${theme("colors.cyan")}) padding-box,
+          linear-gradient(to top left,${theme("colors.purple")},${theme("colors.cyan")}) border-box`,
+          borderColor: "transparent",
+        },
+        ".hover-gradient-light": {
+          background: `
+          linear-gradient(${theme("colors.light.100")},${theme("colors.light.100")}) padding-box,
+          linear-gradient(to top left,${theme("colors.purple")},${theme("colors.cyan")}) border-box`,
+          borderColor: "transparent",
+        },
+        ".hover-gradient-dark": {
+          background: `
+          linear-gradient(${theme("colors.dark.600")},${theme("colors.dark.600")}) padding-box,
+          linear-gradient(to top left,${theme("colors.purple")},${theme("colors.cyan")}) border-box`,
+          borderColor: "transparent",
+        },
+      });
+    }),
+  ],
 };

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { deleteTodo, toggleTodoCompleted } from "../stores/todo.store";
+  import { deleteTodo } from "../stores/todo.store";
   import ToggleCompleted from "./ToggleCompleted.svelte";
   import cross from "../assets/icon-cross.svg";
   import type { Todo } from "../types";
@@ -7,7 +7,7 @@
   export let todo: Todo;
 </script>
 
-<div on:click={() => toggleTodoCompleted(todo.id)} class="card border-b rounded-t-md group cursor-pointer">
+<div class="card border-b rounded-t-md group">
   <ToggleCompleted {todo} />
   <p
     class:line-through={todo.completed}

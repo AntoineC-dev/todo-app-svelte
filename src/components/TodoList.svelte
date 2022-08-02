@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { todos } from "../stores/todo.store";
+  import { todos, updateTodosOrder } from "../stores/todo.store";
+  import { dragAndDrop } from "../helpers/dragAndDrop.helpers";
   import { filter } from "../stores/filter.store";
   import { flip } from "svelte/animate";
   import { slide } from "svelte/transition";
@@ -16,10 +17,16 @@
   })();
 </script>
 
-<div class="bg-light-100 dark:bg-dark-600 rounded-t-md">
-  {#each filteredTodos as todo (todo.id)}
-    <div out:slide={{ duration: 300 }} in:slide|local={{ duration: 300 }} animate:flip={{ duration: 300 }}>
+<ul use:dragAndDrop class="bg-light-100 dark:bg-dark-600 rounded-t-md">
+  {#each filteredTodos as todo, index (todo.id)}
+    <li
+      draggable="true"
+      out:slide|local={{ duration: 300 }}
+      in:slide|local={{ duration: 300 }}
+      animate:flip={{ duration: 300 }}
+      class="cursor-move"
+    >
       <TodoItem {todo} />
-    </div>
+    </li>
   {/each}
-</div>
+</ul>
