@@ -48,10 +48,11 @@ const initialTodos: Todo[] = [
   },
 ];
 
-export const todos = writable<Todo[]>(getPersistedData("todos") ?? initialTodos);
+// export const todos = writable<Todo[]>(getPersistedData("todos") ?? initialTodos);
+export const todos = writable<Todo[]>(initialTodos);
 
 // Sync store & localStorage
-todos.subscribe((current) => updatePersistedData("todos", current));
+// todos.subscribe((current) => updatePersistedData("todos", current));
 
 // Create Todo
 export const createTodo = (content: Todo["content"]) =>
