@@ -1,13 +1,10 @@
 import { writable } from "svelte/store";
-import type { Filter, Todo } from "../types";
+import type { Filter } from "../types";
+
+const defaultValue: Filter = "all";
+export const filter = writable<Filter>(defaultValue);
 
 export const filters: Filter[] = ["all", "active", "completed"];
 
-// export const filter = writable<Filter>(getPersistedData("filter") ?? "all");
-export const filter = writable<Filter>("all");
-
-// Sync store & localStorage
-// filter.subscribe((current) => updatePersistedData("filter", current));
-
-// Create Todo
+// Set current filter
 export const setFilter = (newFilter: Filter) => filter.set(newFilter);
