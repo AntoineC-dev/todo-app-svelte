@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .focus-outline {
+    @apply focus:outline-none focus-visible:ring-2 ring-light-500 dark:ring-dark-200 ring-offset-2 ring-offset-light-500 dark:ring-offset-dark-200;
+  }
+
+  .card {
+    @apply bg-light-100 dark:bg-dark-600 flex items-center gap-2 shadow-lg min-h-card px-4 py-2 border-light-300 dark:border-dark-500;
+  }
+
+  .card-content {
+    @apply flex-1 p-1 rounded-md bg-transparent;
+  }
+}

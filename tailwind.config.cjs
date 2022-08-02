@@ -9,6 +9,8 @@ module.exports = {
       ...defaultTheme.screens,
     },
     colors: {
+      transparent: "transparent",
+      current: "currentColor",
       blue: "hsl(220, 98%, 61%)",
       cyan: "hsl(192, 100%, 67%)",
       purple: "hsl(280, 87%, 65%)",
@@ -32,6 +34,28 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Open\\ Sans", ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        "clamp-body": "clamp(0.75rem,calc(0.33rem + 1.04vw),1.00rem)",
+        "clamp-heading": [
+          "clamp(1.75rem, calc(-0.12rem + 4.69vw), 2.88rem)",
+          {
+            letterSpacing: "0.3em",
+            lineHeight: "1",
+          },
+        ],
+      },
+      spacing: {
+        "clamp-toggle": "clamp(1.25rem, calc(0.42rem + 2.08vw), 1.75rem)",
+        "clamp-logo": "clamp(1.25rem, calc(0.00rem + 3.13vw), 2.00rem)",
+        "clamp-cross": "clamp(0.75rem, calc(0.33rem + 1.04vw), 1.00rem)",
+        "clamp-x-check": "clamp(0.56rem, calc(0.25rem + 0.78vw), 0.75rem)",
+        "clamp-y-check": "clamp(0.44rem, calc(0.13rem + 0.78vw), 0.63rem)",
+        "clamp-x-bg": "clamp(12.50rem, calc(6.99rem + 18.38vw), 18.75rem)",
+        "clamp-top-padding": "clamp(2.75rem, calc(-1.00rem + 12.50vw), 7.00rem)",
+      },
+      minHeight: {
+        card: "clamp(3.25rem, calc(2.42rem + 2.08vw), 3.75rem)",
       },
     },
   },
