@@ -1,9 +1,9 @@
-import { getPersistedData, updatePersistedData } from "../helpers/persistStore.helper";
 import { writable } from "svelte/store";
+import { browser } from "$app/env";
 import { v4 as uuid } from "uuid";
 import type { Todo } from "../types";
 
-const initialTodos: Todo[] = [
+const defaultTodos: Todo[] = [
   {
     id: uuid(),
     content: "Complete online JavaScript course",
@@ -48,11 +48,19 @@ const initialTodos: Todo[] = [
   },
 ];
 
+const initialTodos = browser
+  ? (JSON.parse(window.localStorage.getItem("todos") as string) as Todo[]) ?? defaultTodos
+  : defaultTodos;
+
 // export const todos = writable<Todo[]>(getPersistedData("todos") ?? initialTodos);
 export const todos = writable<Todo[]>(initialTodos);
 
 // Sync store & localStorage
-// todos.subscribe((current) => updatePersistedData("todos", current));
+todos.subscribe((current) => {
+  if (browser) {
+    window.localStorage.setItem("todos", JSON.stringify(current));
+  }
+});
 
 // Create Todo
 export const createTodo = (content: Todo["content"]) =>

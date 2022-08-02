@@ -1,4 +1,3 @@
-import { getPersistedData, updatePersistedData } from "../helpers/persistStore.helper";
 import { writable } from "svelte/store";
 import type { Filter, Todo } from "../types";
 
