@@ -41,7 +41,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [See solution here](https://www.frontendmentor.io/solutions/simpleui-and-api-to-get-good-advices-built-w-sveltekit-and-tailwindcss-MxUPxBFoIR)
+- Solution URL: [See solution here](https://www.frontendmentor.io/solutions/todo-app-localstorage-lightdark-mode-sveltekit-ts-and-tailwindcss-nL6zrqo54K)
 - Live Site URL: [See live site here](https://todo-app-svelte-teal.vercel.app/)
 
 ## My process
