@@ -61,12 +61,10 @@ export const createTodo = (content: Todo["content"]) =>
   ]);
 
 // Toggle Completed
-export const toggleTodoCompleted = (id: Todo["id"]) => {
-  console.log("toggle");
+export const toggleTodoCompleted = (id: Todo["id"]) =>
   todos.update((current) => [
     ...current.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed, updatedAt: Date.now() } : todo)),
   ]);
-};
 
 // Delete Todo
 export const deleteTodo = (id: Todo["id"]) => todos.update((current) => current.filter((todo) => todo.id !== id));
@@ -77,7 +75,6 @@ export const deleteCompletedTodos = () => todos.update((current) => current.filt
 // Sort todos after drag event
 export const updateTodosOrder = (previous: number, next: number) =>
   todos.update((todos) => {
-    console.log("update todos");
     const todo = todos[previous];
     const newArr = [...todos];
     newArr.splice(previous, 1);
