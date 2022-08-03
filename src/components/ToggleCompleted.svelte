@@ -13,8 +13,7 @@
 
 <button
   aria-label={todo ? `Set todo to ${todo.completed ? "uncompleted" : "completed"}` : ""}
-  type="button"
-  role={todo ? "button" : "presentation"}
+  role={todo ? "button" : "none"}
   disabled={!todo}
   on:click|stopPropagation={() => todo && toggleTodoCompleted(todo.id)}
   class="border-2 border-light-200 dark:border-dark-500 w-clamp-toggle h-clamp-toggle flex justify-center items-center rounded-full shrink-0 {gradient}"
