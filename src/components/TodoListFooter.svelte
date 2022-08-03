@@ -27,6 +27,7 @@
     >
       {#each filters as filter, index (index)}
         <button
+          aria-label={`Set filter to ${filter}`}
           disabled={$currentFilter === filter}
           type="button"
           on:click={() => setFilter(filter)}

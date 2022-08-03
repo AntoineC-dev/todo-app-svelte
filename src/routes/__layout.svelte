@@ -28,6 +28,8 @@
 
 <svelte:window bind:innerWidth />
 
-<img {src} alt="" class="absolute top-0 left-0 w-full -z-50 h-clamp-x-bg object-cover" />
+<main>
+  <img {src} alt="" class="absolute top-0 left-0 w-full -z-50 h-clamp-x-bg object-cover" />
 
-<slot />
+  <slot />
+</main>
