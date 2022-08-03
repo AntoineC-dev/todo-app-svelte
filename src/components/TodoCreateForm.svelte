@@ -25,6 +25,6 @@
     on:keydown={handleSubmit}
     placeholder="Create a new todo..."
     bind:value
-    class="card-content focus-outline dark:ring-dark-400 dark:ring-offset-dark-400 placeholder:dark:text-dark-300"
+    class="card-content focus:outline-none placeholder:dark:text-dark-300"
   />
 </div>
