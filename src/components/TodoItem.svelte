@@ -21,7 +21,7 @@
     aria-label="Delete todo"
     type="button"
     on:click|stopPropagation={() => deleteTodo(todo.id)}
-    class="flex justify-center items-center shrink-0 p-1 rounded-full [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100 transition-opacity"
+    class="flex justify-center items-center shrink-0 p-2 -mx-2 rounded-full [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:focus-visible:opacity-100 transition-opacity"
   >
     <img src={cross} alt="" class="w-clamp-cross h-clamp-cross" />
   </button>
