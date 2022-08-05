@@ -33,3 +33,11 @@
 
   <slot />
 </main>
+
+<footer class="mt-auto mb-2 text-center text-sm font-normal text-light-400">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+  <a
+    href="https://github.com/AntoineC-dev"
+    class="text-sm font-bold bg-gradient-to-tl text-transparent from-purple to-cyan bg-clip-text">Antoine C</a
+  >.
+</footer>
